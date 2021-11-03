@@ -11,6 +11,8 @@
 </template>
 
 <script>
+import "currency-flags/dist/currency-flags.min.css";
+
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
 
