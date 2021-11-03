@@ -1,0 +1,22 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  box-sizing: border-box; // overflow: scroll;
+  background: white;
+  font-size: 1.4rem;
+  font-family: "Montserrat", sans-serif;
+  color: #000000;
+}
