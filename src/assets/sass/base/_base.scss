@@ -15,8 +15,67 @@ body {
   width: 100vw;
   position: relative;
   box-sizing: border-box; // overflow: scroll;
-  background: white;
+  background: $background-color;
   font-size: 1.4rem;
   font-family: "Montserrat", sans-serif;
   color: #000000;
+}
+
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+
+.image-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 100%;
+  }
+
+  &.vertical {
+    img {
+      width: auto;
+      height: 100%;
+    }
+  }
+}
+main {
+  min-height: calc(100vh - 20rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .container {
+    max-width: $container-width;
+  }
+}
+form {
+  .form-group {
+    margin-bottom: 2rem;
+    small {
+      display: block;
+      text-transform: uppercase;
+      color: #a0a8b1;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      margin-left: 5px;
+    }
+    input {
+      width: 100%;
+      padding: 7px 1rem;
+      outline: none;
+      border: 2px solid #f2f5f4;
+      border-radius: 4px;
+    }
+    .input-group {
+      height: 3.4rem;
+      width: 100%;
+    }
+  }
 }

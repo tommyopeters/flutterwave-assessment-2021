@@ -1,0 +1,37 @@
+footer {
+  background-color: white;
+  height: 13.5rem;
+  padding: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .container {
+    width: $container-width;
+    .row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #c1c8d1;
+      font-size: 1.2rem;
+      font-weight: 500;
+
+      .socials {
+        font-size: 1.4rem;
+      }
+
+      &:not(:last-of-type) {
+        color: #9c9d9d;
+        padding-bottom: 2rem;
+        margin-bottom: 2rem;
+
+        border-bottom: 1px solid #d7dee6;
+      }
+
+      ul {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+      }
+    }
+  }
+}
