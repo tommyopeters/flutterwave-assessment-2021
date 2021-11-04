@@ -58,17 +58,16 @@
             </div>
             <div class="exchange-info">
               <p>
-                Current Exchange Rate 1 {{ base.code.toUpperCase() }} =
+                Exchange Rate 1 {{ base.code.toUpperCase() }} =
                 {{ recipient.rate.toFixed(2) }}
                 {{ recipient.code.toUpperCase() }}
               </p>
             </div>
             <div class="row fees">
-              <small>Fees</small>
-              <small
-                >- {{ (from * 0.1).toFixed(2) }}
-                {{ base.code.toUpperCase() }}</small
-              >
+              <small>Fees (10%)</small>
+              <p>
+                - {{ (from * 0.1).toFixed(2) }} {{ base.code.toUpperCase() }}
+              </p>
             </div>
             <div class="row total">
               <small>Total </small>
@@ -125,10 +124,15 @@ export default {
       if (newValue == "") {
         this.from = "";
         this.to = "";
+        return;
       }
       if (isNaN(newValue * 1)) {
         this.from = oldValue;
         return;
+      }
+      if (newValue * 1 > 100000) {
+        this.from = "100000.00";
+        this.changeRecipientValue();
       }
     },
     to: function (newValue, oldValue) {
