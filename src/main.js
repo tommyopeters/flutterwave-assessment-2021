@@ -3,6 +3,10 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 
+import Flutterwave from "vue-flutterwave";
+
+Vue.use(Flutterwave, { publicKey: "YOUR CONNECT PUBLIC KEY" });
+
 Vue.config.productionTip = false;
 
 // focus-on-input directive
@@ -12,6 +16,14 @@ Vue.directive("focus", {
     // Focus the element
     el.focus();
   },
+});
+
+router.beforeEach(async (to, from, next) => {
+  // Redirect to only working page everytime
+  if (to.path != "/send") {
+    next("/send");
+  }
+  next();
 });
 
 new Vue({

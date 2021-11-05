@@ -56,6 +56,15 @@ main#send {
         }
       }
     }
+
+    @media (max-width: 768px) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      > *:not(.current) {
+        display: none;
+      }
+    }
   }
   .container {
     display: flex;
@@ -72,12 +81,35 @@ main#send {
       text-align: center;
       margin-bottom: 3rem;
     }
+    .header {
+      margin-bottom: 3rem;
+
+      .back {
+        background-color: #ffffff;
+        border-radius: 4px;
+        padding: 1rem 2rem;
+        font-size: 1.2rem;
+        color: rgba(0, 0, 0, 0.5);
+        font-weight: 600;
+        cursor: pointer;
+
+        transition: all 150ms ease-in-out;
+        i {
+          margin-right: 8px;
+        }
+
+        &:hover {
+          color: $main-color;
+        }
+      }
+    }
 
     form {
       width: 32rem;
       border: 1px solid #f2f5f4;
       border-radius: 4px;
       background-color: #ffffff;
+      box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.05);
       .form-header {
         padding: 1rem 2rem;
         border-bottom: 1px solid #f2f5f4;
@@ -172,6 +204,23 @@ main#send {
             small {
             }
           }
+          &.transfer-info,
+          &.recipient-info {
+            font-size: 1.3rem;
+            small {
+              color: #b3bcc5;
+            }
+          }
+          &.transfer-info {
+            display: block;
+
+            & > div {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              padding: 5px 0;
+            }
+          }
         }
         button.btn {
           height: 3.6rem;
@@ -187,6 +236,54 @@ main#send {
 
           margin-top: 2rem;
           margin-bottom: 1rem;
+        }
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 6.5rem;
+          width: 6.5rem;
+          border-radius: 100%;
+          background-color: #2ebf6e;
+          color: #ffffff;
+          font-size: 3.5rem;
+
+          margin: 3rem 0 2rem;
+        }
+        h4 {
+          font-size: 1.6rem;
+          font-weight: 600;
+        }
+        h5 {
+          font-weight: 500;
+          color: rgba(0, 0, 0, 0.5);
+        }
+        p {
+          text-align: center;
+          font-size: 1.2rem;
+          font-weight: 500;
+          margin: 2.5rem 0;
+          color: rgba(0, 0, 0, 0.5);
+        }
+        .btn {
+          font-size: 1.3rem;
+          font-weight: 600;
+          color: rgba(0, 0, 0, 0.6);
+          padding: 6px 1.5rem;
+          border: 1px solid rgba(0, 0, 0, 0.5);
+          border-radius: 4px;
+          cursor: pointer;
+          margin-bottom: 3rem;
+          i {
+            margin-right: 6px;
+            color: rgba(0, 0, 0, 0.8);
+          }
         }
       }
     }
