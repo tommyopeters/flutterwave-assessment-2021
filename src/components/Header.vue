@@ -27,14 +27,14 @@
         <label for="mobile-menu">
           <div class="hamburger"><span></span><span></span><span></span></div>
         </label>
-        <nav :class="{ open: mobileMenuActive }">
+        <nav>
           <ul class="nav-list">
             <Link to="/dashboard" el="li">Dashboard</Link>
             <Link to="/transactions" el="li">Transactions</Link>
             <Link to="/send" el="li">Send</Link>
             <Link to="/account" el="li">Account</Link>
 
-            <li @click="logout">Log Out</li>
+            <li>Log Out</li>
           </ul>
         </nav>
       </div>

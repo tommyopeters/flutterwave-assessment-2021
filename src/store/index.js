@@ -5,6 +5,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    loading: true,
     currencies: [
       {
         code: "ngn",
@@ -43,9 +44,13 @@ export default new Vuex.Store({
     SET_CURRENCIES: function (state, currencies) {
       state.currencies = currencies;
     },
+    SET_LOADING: function (state, bool) {
+      state.loading = bool;
+    },
   },
   actions: {
     fetchCurrenies: async function ({ commit, state }, baseCurrency) {
+      commit("SET_LOADING", true);
       const options = {
         method: "GET",
         headers: { Accept: "application/json" },
@@ -77,8 +82,15 @@ export default new Vuex.Store({
           });
           console.log(currencies);
           commit("SET_CURRENCIES", currencies);
+          setTimeout(() => {
+            commit("SET_LOADING", false);
+          }, 1000);
         })
-        .catch((err) => console.error(err));
+        .catch(() => {
+          setTimeout(() => {
+            commit("SET_LOADING", false);
+          }, 1000);
+        });
     },
   },
   modules: {},
