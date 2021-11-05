@@ -34,9 +34,9 @@ export default new Vuex.Store({
       },
     ],
     flutterwave: {
-      public_key: "FLWPUBK_TEST-113196e30dd4b26f1c7e04039c0cd080-X",
-      secret_key: "FLWSECK_TEST-09de4259bb5d884883c68c0ae9a450fb-X",
-      encryption: "FLWSECK_TESTe177bf3cf19b",
+      public_key: "FLWPUBK_TEST-1f01ba459ef3990ca28099908238e205-X",
+      secret_key: "FLWSECK_TEST-5d5bbe76832316acbb247f088b59b569-X",
+      encryption: "FLWSECK_TEST5204b2a57538",
     },
   },
 

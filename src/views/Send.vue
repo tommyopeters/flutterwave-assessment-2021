@@ -341,7 +341,7 @@ export default {
     },
     makePayment() {
       this.$launchFlutterwave({
-        public_key: "FLWPUBK_TEST-SANDBOXDEMOKEY-X",
+        public_key: this.flutterwave.public_key,
         tx_ref: "RX1",
         amount: this.total,
         currency: "USD",
