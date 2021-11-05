@@ -5,13 +5,16 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "start": "node server.js"
   },
   "dependencies": {
     "@dmuy/toast": "^2.0.3",
     "core-js": "^3.6.5",
     "currency-flags": "^3.2.1",
+    "express": "^4.17.1",
     "jquery": "^3.6.0",
+    "serve-static": "^1.14.1",
     "vue": "^2.6.11",
     "vue-flutterwave": "^1.0.0",
     "vue-router": "^3.2.0",
